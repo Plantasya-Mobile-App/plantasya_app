@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="plantasya_button_bg">#FFF2F2</color>
+    <color name="plant_green">#398945</color>
+    <color name="login_bg">#F9F7F2</color>
+    <color name="login_btn_bg">#3E8E41</color>
+    <color name="divider_color">#707070</color>
+    <color name="task_bg">#E8F7E9</color>
+    <color name="bottom_nav_bg">#B8EEBD</color>
+</resources>

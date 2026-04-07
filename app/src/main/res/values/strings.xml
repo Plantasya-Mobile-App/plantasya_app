@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Plantasya</string>
+    <string name="btn_log_in">LOG IN</string>
+    <string name="btn_create_account">CREATE AN ACCOUNT</string>
+</resources>
