@@ -51,7 +51,6 @@
             android:layout_margin="15dp"
             android:background="@drawable/round_button_white"
             android:src="@drawable/home"
-
             app:tint="@color/plant_green" />
 
         <ImageButton

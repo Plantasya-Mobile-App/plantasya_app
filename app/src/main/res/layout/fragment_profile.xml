@@ -157,9 +157,13 @@
         app:layout_constraintTop_toBottomOf="@id/vLineStats">
 
         <LinearLayout
+            android:id="@+id/llSettings"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:gravity="center_vertical"
             android:paddingStart="16dp"
             android:paddingEnd="16dp">
@@ -180,9 +184,13 @@
         <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/plant_green" />
 
         <LinearLayout
+            android:id="@+id/llTutorial"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:gravity="center_vertical"
             android:paddingStart="16dp"
             android:paddingEnd="16dp">
@@ -203,9 +211,13 @@
         <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/plant_green" />
 
         <LinearLayout
+            android:id="@+id/llAbout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@color/white"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:gravity="center_vertical"
             android:paddingStart="16dp"
             android:paddingEnd="16dp">

@@ -1,9 +1,9 @@
 package com.example.plantasya
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 
 class HistoryActivity : AppCompatActivity() {
 
@@ -16,29 +16,55 @@ class HistoryActivity : AppCompatActivity() {
         val btnHistory = findViewById<ImageButton>(R.id.btnNavHistory)
         val btnProfile = findViewById<ImageButton>(R.id.btnNavProfile)
 
+        // Load HistoryFragment by default
+        if (savedInstanceState == null) {
+            replaceFragment(HistoryFragment())
+            updateNavButtons(btnHistory)
+        }
+
         btnHome.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(0, 0)
-            finish()
+            replaceFragment(HomeFragment())
+            updateNavButtons(btnHome)
         }
 
         btnDictionary.setOnClickListener {
-            val intent = Intent(this, DictionaryActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(0, 0)
-            finish()
+            replaceFragment(DictionaryFragment())
+            updateNavButtons(btnDictionary)
         }
 
         btnHistory.setOnClickListener {
-            // Already on History screen
+            replaceFragment(HistoryFragment())
+            updateNavButtons(btnHistory)
         }
 
         btnProfile.setOnClickListener {
-            val intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
-            overridePendingTransition(0, 0)
-            finish()
+            replaceFragment(ProfileFragment())
+            updateNavButtons(btnProfile)
+        }
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
+    }
+
+    private fun updateNavButtons(selectedButton: ImageButton) {
+        val navButtons = listOf(
+            findViewById<ImageButton>(R.id.btnNavHome),
+            findViewById<ImageButton>(R.id.btnNavDictionary),
+            findViewById<ImageButton>(R.id.btnNavHistory),
+            findViewById<ImageButton>(R.id.btnNavProfile)
+        )
+
+        for (btn in navButtons) {
+            if (btn == selectedButton) {
+                btn.setBackgroundResource(R.drawable.round_button)
+                btn.setColorFilter(null)
+            } else {
+                btn.setBackgroundResource(R.drawable.round_button_white)
+                btn.setColorFilter(resources.getColor(R.color.plant_green, theme))
+            }
         }
     }
 }
